@@ -1,16 +1,14 @@
-# Nanvix [![Build Status](https://travis-ci.org/nanvix/nanvix.svg?branch=master)](https://travis-ci.org/nanvix/nanvix) [![Join us on Slack!](https://img.shields.io/badge/chat-on%20Slack-e01563.svg)](https://join.slack.com/t/nanvix/shared_invite/enQtMzY2Nzg5OTQ4NTAyLTAxMmYwOGQ0ZmU2NDg2NTJiMWU1OWVkMWJhMWY4NzMzY2E1NTIyMjNiOTVlZDFmOTcyMmM2NDljMTAzOGI1NGY)
+## What is Nanvix Playground
 
-## What Is Nanvix
+This project, named Nanvix Playground, is a fork of the original **[Nanvix](https://github.com/nanvix/nanvix)**, a simple operating system written for educational purposes.
 
-Nanvix is a Unix-like operating system written by [Pedro H. Penna](https://github.com/ppenna) for
-educational purposes. It is designed to be simple and small, but also
-modern and fully featured.
+The idea is to be able to use this repository as a playground, being free to break anything while learning a bit more about operating systems' architecture.
 
-## What Hardware Is Required?
+The reason this repository is not forked using GitHub's fork feature is because it creates a strong dependency. Pull Requests, for example, always focus on the forked repository rather than the fork itself. Opening Pull Requests on the original project that are not intended to me berged, by accident, would be annoying for the maintainers.
 
-Nanvix targets 32-bit x86-based PCs and only requires a floppy or
-CD-ROM drive and 16 MB of RAM. You can run it either in a real PC
-or in a virtual machine, using a Live System's Image.
+A huge "thank you" to [Pedro H. Penna](https://github.com/ppenna) and all the other contributors! This project is awesome, and it is really helpful for those interested on learning how operating systems work.
+
+---
 
 ## Building
 

@@ -1,5 +1,5 @@
-# 
-# Copyright(C) 2011-2016 Pedro H. Penna   <pedrohenriquepenna@gmail.com> 
+#
+# Copyright(C) 2011-2016 Pedro H. Penna   <pedrohenriquepenna@gmail.com>
 #              2015-2016 Davidson Francis <davidsondfgl@hotmail.com>
 #
 # This file is part of Nanvix.
@@ -25,6 +25,7 @@
 .PHONY: chown
 .PHONY: cp
 .PHONY: echo
+.PHONY: hello
 .PHONY: kill
 .PHONY: ln
 .PHONY: login
@@ -45,103 +46,107 @@
 .PHONY: sleep
 
 # Builds everything.
-all: cat chgrp chmod chown cp echo kill ln login ls mv nice pwd rm stat sync \
+all: cat chgrp chmod chown cp echo hello kill ln login ls mv nice pwd rm stat sync \
 	 touch tsh ps clear nim sleep
 
 # Builds cat.
-cat: 
+cat:
 	$(CC) $(CFLAGS) $(LDFLAGS) cat/*.c -o $(UBINDIR)/cat $(LIBDIR)/libc.a
-	
+
 # Builds chgrp.
-chgrp: 
+chgrp:
 	$(CC) $(CFLAGS) $(LDFLAGS) chgrp/*.c -o $(UBINDIR)/chgrp $(LIBDIR)/libc.a
-	
+
 # Builds chmod.
-chmod: 
+chmod:
 	$(CC) $(CFLAGS) $(LDFLAGS) chmod/*.c -o $(UBINDIR)/chmod $(LIBDIR)/libc.a
-	
+
 # Builds chown.
-chown: 
+chown:
 	$(CC) $(CFLAGS) $(LDFLAGS) chown/*.c -o $(UBINDIR)/chown $(LIBDIR)/libc.a
-	
+
 # Builds cp.
-cp: 
+cp:
 	$(CC) $(CFLAGS) $(LDFLAGS) cp/*.c -o $(UBINDIR)/cp $(LIBDIR)/libc.a
-	
+
 # Builds echo.
-echo: 
+echo:
 	$(CC) $(CFLAGS) $(LDFLAGS) echo/*.c -o $(UBINDIR)/echo $(LIBDIR)/libc.a
-	
+
+# Builds hello.
+hello:
+	$(CC) $(CFLAGS) $(LDFLAGS) hello/*.c -o $(UBINDIR)/hello $(LIBDIR)/libc.a
+
 # Builds kill.
-kill: 
+kill:
 	$(CC) $(CFLAGS) $(LDFLAGS) kill/*.c -o $(UBINDIR)/kill $(LIBDIR)/libc.a
-	
+
 # Builds ln.
-ln: 
+ln:
 	$(CC) $(CFLAGS) $(LDFLAGS) ln/*.c -o $(UBINDIR)/ln $(LIBDIR)/libc.a
-	
+
 # Builds login.
-login: 
+login:
 	$(CC) $(CFLAGS) $(LDFLAGS) login/*.c -o $(UBINDIR)/login $(LIBDIR)/libc.a
-	
+
 # Builds ls.
-ls: 
+ls:
 	$(CC) $(CFLAGS) $(LDFLAGS) ls/*.c -o $(UBINDIR)/ls $(LIBDIR)/libc.a
-	
+
 # Builds mkdir.
-mkdir: 
+mkdir:
 	$(CC) $(CFLAGS) $(LDFLAGS) mkdir/*.c -o $(UBINDIR)/mkdir $(LIBDIR)/libc.a
-	
+
 # Builds mv.
-mv: 
+mv:
 	$(CC) $(CFLAGS) $(LDFLAGS) mv/*.c -o $(UBINDIR)/mv $(LIBDIR)/libc.a
-	
+
 # Builds nice.
-nice: 
+nice:
 	$(CC) $(CFLAGS) $(LDFLAGS) nice/*.c -o $(UBINDIR)/nice $(LIBDIR)/libc.a
-	
+
 # Builds pwd.
-pwd: 
+pwd:
 	$(CC) $(CFLAGS) $(LDFLAGS) pwd/*.c -o $(UBINDIR)/pwd $(LIBDIR)/libc.a
-	
+
 # Builds rm.
-rm: 
+rm:
 	$(CC) $(CFLAGS) $(LDFLAGS) rm/*.c -o $(UBINDIR)/rm $(LIBDIR)/libc.a
-	
+
 # Builds rmdir.
-rmdir: 
+rmdir:
 	$(CC) $(CFLAGS) $(LDFLAGS) rmdir/*.c -o $(UBINDIR)/rmdir $(LIBDIR)/libc.a
-	
+
 # Builds stat.
-stat: 
+stat:
 	$(CC) $(CFLAGS) $(LDFLAGS) stat/*.c -o $(UBINDIR)/stat $(LIBDIR)/libc.a
-	
+
 # Builds sync.
-sync: 
+sync:
 	$(CC) $(CFLAGS) $(LDFLAGS) sync/*.c -o $(UBINDIR)/sync $(LIBDIR)/libc.a
-	
+
 # Builds touch.
-touch: 
+touch:
 	$(CC) $(CFLAGS) $(LDFLAGS) touch/*.c -o $(UBINDIR)/touch $(LIBDIR)/libc.a
-	
+
 # Builds tsh.
-tsh: 
+tsh:
 	$(CC) $(CFLAGS) $(LDFLAGS) tsh/*.c -o $(UBINDIR)/tsh $(LIBDIR)/libc.a
 
 # Builds ps.
-ps: 
+ps:
 	$(CC) $(CFLAGS) $(LDFLAGS) ps/*.c -o $(UBINDIR)/ps $(LIBDIR)/libc.a
 
 # Builds clear.
-clear: 
+clear:
 	$(CC) $(CFLAGS) $(LDFLAGS) clear/*.c -o $(UBINDIR)/clear $(LIBDIR)/libc.a
 
 # Builds nim.
-nim: 
+nim:
 	$(CC) $(CFLAGS) $(LDFLAGS) nim/*.c -o $(UBINDIR)/nim $(LIBDIR)/libc.a
 
 # Builds sleep.
-sleep: 
+sleep:
 	$(CC) $(CFLAGS) $(LDFLAGS) -D TESTE sleep/*.c -o $(UBINDIR)/sleep $(LIBDIR)/libc.a
 
 
@@ -153,6 +158,7 @@ clean:
 	@rm -f $(UBINDIR)/chown
 	@rm -f $(UBINDIR)/cp
 	@rm -f $(UBINDIR)/echo
+	@rm -f $(UBINDIR)/hello
 	@rm -f $(UBINDIR)/kill
 	@rm -f $(UBINDIR)/ln
 	@rm -f $(UBINDIR)/login
